@@ -40,5 +40,10 @@ import java.util.Set;
 	public void setProductSet(Set<Product> productSet) {
 		this.productSet = productSet;
 	}
+	@Override
+	public String toString() {
+		return "CategoryImpl [categoryid=" + categoryid + ", categoryname=" + categoryname + ", productSet="
+				+ productSet + "]";
+	}
 	
 	}

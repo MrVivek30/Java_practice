@@ -47,6 +47,7 @@ public static void main(String[] args) {
 			case 6:
 				cu.searchbyid();
 				break;
+			case 7:
 				
 		}
 	}while(choice != 0);
