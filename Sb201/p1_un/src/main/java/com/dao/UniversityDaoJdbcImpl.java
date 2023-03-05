@@ -21,7 +21,7 @@ public class UniversityDaoJdbcImpl implements UniversityDao {
 		
 		try(Connection connection=DbUtil.contodb()) {
 			
-			String string="Select * from student where id";
+			String string="Select * from student where id=?";
 			PreparedStatement ps=connection.prepareStatement(string);
 			ps.setInt(1, id);
 			ResultSet resultset=ps.executeQuery();
