@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd" >
+     
+
+	    <context:component-scan base-package="com"/>    	
+	      
+	      <bean id="developer1" class="com.model.Developer" scope="prototype">
+			  <constructor-arg name="id" value="1"/>
+			  <constructor-arg name="name" value="raj"/>
+			  <constructor-arg name="age" value="22"/>
+			  <constructor-arg name="email" value="vike@gmial.com"/>
+			  <constructor-arg name="mobile" value="5959944961"/>
+			  <property name="noofprojectdone" value="6"/>
+			  
+		  </bean>
+		  
+		    <bean id="developer2" class="com.model.Developer" scope="prototype">
+			  <constructor-arg name="id" value="2"/>
+			  <constructor-arg name="name" value="kml"/>
+			  <constructor-arg name="age" value="21"/>
+			  <constructor-arg name="email" value="vlkke@gmial.com"/>
+			  <constructor-arg name="mobile" value="5959944961"/>
+			  <property name="noofprojectdone" value="2"/>
+			  
+		  </bean>
+		  
+		  
+		    <bean id="developer3" class="com.model.Developer" scope="prototype">
+			  <constructor-arg name="id" value="3"/>
+			  <constructor-arg name="name" value="sunnu"/>
+			  <constructor-arg name="age" value="20"/>
+			  <constructor-arg name="email" value="sunu@gmial.com"/>
+			  <constructor-arg name="mobile" value="5959944961"/>
+			  <property name="noofprojectdone" value="0"/>
+			  
+		  </bean>
+	        <bean id="developer4" class="com.model.Developer" scope="prototype" >
+			  <constructor-arg name="id" value="4"/>
+			  <constructor-arg name="name" value="abhi"/>
+			  <constructor-arg name="age" value="22"/>
+			  <constructor-arg name="email" value="abhi@gmial.com"/>
+			  <constructor-arg name="mobile" value="5959944961"/>
+			  <property name="noofprojectdone" value="5"/>
+			  
+		  </bean>
+		  
+		  
+		    <bean id="developer5" class="com.model.Developer" scope="prototype">
+			  <constructor-arg name="id" value="5"/>
+			  <constructor-arg name="name" value="qwerty"/>
+			  <constructor-arg name="age" value="222"/>
+			  <constructor-arg name="email" value="qwerty@gmial.com"/>
+			  <constructor-arg name="mobile" value="5959944961"/>
+			  <property name="noofprojectdone" value="89"/>
+			  
+		  </bean>
+	      
+	      
+	      <bean id="project1" class="com.model.Project">
+			  <constructor-arg name="id" value="1"/>
+			  <constructor-arg name="name" value="shilu"/>
+			  <constructor-arg name="duration" value="3"/>
+			  
+		  </bean>
+	      
+	        <bean id="project2" class="com.model.Project">
+			  <constructor-arg name="id" value="2"/>
+			  <constructor-arg name="name" value="kallu"/>
+			  <constructor-arg name="duration" value="3"/>
+			  
+		  </bean>
+		  
+		    <bean id="project3" class="com.model.Project">
+			  <constructor-arg name="id" value="3"/>
+			  <constructor-arg name="name" value="bimal"/>
+			  <constructor-arg name="duration" value="3"/>
+			  
+		  </bean>
+	      
+	      <bean id="developerService" class="com.service.DeveloperService">
+			  
+			  <property name="projectMap">
+				  <map>
+					  <entry key-ref="developer1" value-ref="project1" />
+					  <entry key-ref="developer2" value-ref="project2" />
+					  <entry key-ref="developer3" value-ref="project3" />
+					  
+				  </map>
+				  
+			  </property>
+			  
+			  <property name="developerList">
+				  
+				  <list>
+					  <ref bean="developer1" />
+					  <ref bean="developer2" />
+					  <ref bean="developer3" />
+					  <ref bean="developer4" />
+					  <ref bean="developer5" />
+				  </list>
+				  
+			  </property>
+			  
+		  </bean>  	
+	      
+	</beans>
