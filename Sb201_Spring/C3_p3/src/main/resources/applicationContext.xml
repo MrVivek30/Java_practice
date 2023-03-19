@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!--for auto Scanning -->
+	<context:component-scan base-package="spring" />
+	
+	
+	<!--dependencies -->
+	<bean id="breakFast" class="com.masai.BreakFast" />
+	<bean id="lunch" class="com.masai.Lunch" />
+	<bean id="dinner" class="com.masai.Dinner" />
+	
+	
+	<!-- dependent class-->
+	<bean id="runner" class="com.masai.Eat">
+	
+		<!-- setter injection-->
+		
+		 <property name="foodType" ref="lunch" />
+		
+		<!-- Constructor injection-->
+		
+		<constructor-arg name="foodType" ref="lunch"/>
+		
+	</bean>
+</beans>
