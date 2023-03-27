@@ -1,0 +1,15 @@
+package com.masai.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.masai.models.Flat;
+
+public interface FlatRepo extends JpaRepository<Flat, Integer> {
+	@Query("select f from Flat f where price<?1")
+	public List<Flat> findFlatPriceLess(Integer price);
+	
+
+}

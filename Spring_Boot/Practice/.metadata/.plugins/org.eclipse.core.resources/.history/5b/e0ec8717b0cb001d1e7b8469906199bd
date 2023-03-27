@@ -1,0 +1,89 @@
+package com.masai.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.masai.dto.EmployeeDTO;
+import com.masai.exceptions.EmployeeException;
+import com.masai.models.Employee;
+import com.masai.repo.EmployeeRepo;
+
+public class EmployeeServiceImpl implements EmployeeService {
+private EmployeeRepo employeeRepo;
+	@Override
+	public Employee registerEmployee(Employee emp) throws EmployeeException {
+		// TODO Auto-generated method stub
+		Employee employee=employeeRepo.save(emp);
+		return employee;
+	}
+
+	@Override
+	public Employee getEmployeeById(Integer empId) throws EmployeeException {
+		// TODO Auto-generated method stub
+		Optional<Employee> employee=employeeRepo.findById(empId);
+		if(employee.isPresent()) {
+			Employee employee2=employee.get();
+			return employee2;
+		}
+		else {
+			throw new EmployeeException();
+		}
+		
+	}
+
+	@Override
+	public List<Employee> getAllEmployeeDetails() throws EmployeeException {
+		// TODO Auto-generated method stub
+		List<Employee>employees=employeeRepo.findAll();
+		if(employees==null) throw new EmployeeException();
+		return employees;
+	}
+
+	@Override
+	public Employee deleteEmployeeById(Integer empId) throws EmployeeException {
+		Optional<Employee> employee=employeeRepo.findById(empId);
+		if(employee.isPresent()) {
+			Employee employee2=employee.get();
+			employeeRepo.delete(employee2);
+			return employee2;
+			
+		}
+		
+		else {
+			throw new EmployeeException();
+		}
+		
+	}
+
+	@Override
+	public Employee loginEmployee(String email, String password) throws EmployeeException {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+	@Override
+	public List<Employee> getEmployeeDetailsByAddress(String address) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee updateEmployee(Employee emp) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getNameAndAddressOfEmplyeeById(Integer empId) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EmployeeDTO> getNameAddressSalaryOfAllEmployee() throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

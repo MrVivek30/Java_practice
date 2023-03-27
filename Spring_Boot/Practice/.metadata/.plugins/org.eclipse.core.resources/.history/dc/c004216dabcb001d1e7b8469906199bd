@@ -1,0 +1,21 @@
+package com.masai.models;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Employee {
+private Integer empId;
+private String empName;
+private Integer salary;
+private String address;
+private String email;
+private String password;
+private String mobile;
+
+}
