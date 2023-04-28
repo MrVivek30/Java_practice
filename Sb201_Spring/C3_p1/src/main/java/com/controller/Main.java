@@ -20,7 +20,7 @@ public static void main(String[] args) {
 	
 	PartTimeJob partTimeJob=ctx.getBean(PartTimeJob.class);
 //	partTimeJob
-	ab.setJobCounsaltancy(partTimeJob);
+//	ab.setJobCounsaltancy(partTimeJob);
 	ab.findJob("finance");
 }
 }

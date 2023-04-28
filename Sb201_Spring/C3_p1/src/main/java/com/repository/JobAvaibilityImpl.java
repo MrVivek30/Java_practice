@@ -19,16 +19,16 @@ public class JobAvaibilityImpl implements JobAvaibility{
 	}
 
 
-	public JobCounsaltancy getJobCounsaltancy() {
-		return jobCounsaltancy;
-	}
-
-
-	public void setJobCounsaltancy(JobCounsaltancy jobCounsaltancy) {
-		this.jobCounsaltancy = jobCounsaltancy;
-	}
-	
-	
+//	public JobCounsaltancy getJobCounsaltancy() {
+//		return jobCounsaltancy;
+//	}
+//
+//
+//	public void setJobCounsaltancy(JobCounsaltancy jobCounsaltancy) {
+//		this.jobCounsaltancy = jobCounsaltancy;
+//	}
+//	
+//	
 	
 //public JobCounsaltancy getJobCounsaltancy() {
 //	return jobCounsaltancy;
