@@ -20,15 +20,21 @@ public class Filter {
 		students.add(new Student(14,"Name4",950));
 		students.add(new Student(15,"Name5",750));
 		
-//		students.stream().filter(i->i.getMarks()>800).forEach(s->System.out.println(s.getName()));
-//		
-//		Stream<Student>st=students.stream().filter(i->i.getRoll()>12);
-//		
-//		
-//		List<Student>list=st.collect(Collectors.toList());
-//		
-//		System.out.println(list);
 		
+		//------filter----forEach--------------------
+		students.stream().filter(i->i.getMarks()>800).forEach(s->System.out.println(s.getName()));
+		
+//		-----------------Stream obj-----------
+		Stream<Student>st=students.stream().filter(i->i.getRoll()>12);
+		
+		
+		// collect--------------------------
+		
+		List<Student>list=st.collect(Collectors.toList());
+		
+		System.out.println(list);
+		
+		// filter ----collect----collectors.toList------------------
 	List<Student>l=	students.stream().filter(i->i.getMarks()>700).collect(Collectors.toList());
 		System.out.println(l);
 		
