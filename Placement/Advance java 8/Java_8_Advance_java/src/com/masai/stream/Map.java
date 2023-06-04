@@ -50,5 +50,8 @@ public class Map {
 		List<Integer>evenList= integers.stream().filter(i->i%2==0).toList();
 		
 		System.out.println(evenList);
+		
+		
+		
 	}
 }
