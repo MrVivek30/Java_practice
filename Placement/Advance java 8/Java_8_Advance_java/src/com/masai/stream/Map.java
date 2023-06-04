@@ -36,14 +36,19 @@ public class Map {
 		
 		
 		
+		//----------WE Problem-------------
 		
-		
-		
+	//	Convert a list of String into a list of Integer(length of that string) and then filter all even numbers inside
+	//  another List
 		
 		//****************************************************************
 		
 		
 		List<Integer>integers=cList.stream().map(i->i.length()).toList();
 		System.out.println(integers);
+		
+		List<Integer>evenList= integers.stream().filter(i->i%2==0).toList();
+		
+		System.out.println(evenList);
 	}
 }
